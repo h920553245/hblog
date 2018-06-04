@@ -1,0 +1,48 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://139.199.64.246:3306/hblog
+        username: hergua
+        password: P@ssw0rd
+        type: com.alibaba.druid.pool.DruidDataSource
+        dbcp2:
+          initial-size: 1
+          min-idle: 3
+          max-idle: 20
+          max-wait-millis: 60000
+          # disconnect after 60000 millions without action
+          time-between-eviction-runs-millis: 60000
+          min-evictable-idle-time-millis: 30000
+          test-while-idle: true
+          test-on-borrow: false
+          test-on-return: false
+          # specified every PSCache's size
+          pool-prepared-statements: true
+          max-open-prepared-statements: 20
+    jpa:
+        hibernate:
+           ddl-auto: update
+        show-sql: false
+    thymeleaf:
+      cache: true
+      mode: LEGACYHTML5
+    http:
+      encoding:
+        charset: utf-8
+      converters:
+        preferred-json-mapper: jackson
+      multipart:
+            enabled: true
+            max-file-size: 50MB
+            max-request-size: 50MB
+    resources:
+      static-locations: classpath:static/,file:static/
+
+logging:
+  level: debug
+#  config: classpath:/log4j.xml
+server:
+  port: 80
+  servlet:
+    session:
+      timeout: 1800s
