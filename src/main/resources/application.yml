@@ -1,9 +1,9 @@
 spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://139.199.64.246:3306/hblog
-        username: hergua
-        password: P@ssw0rd
+        url: jdbc:mysql://localhost:3306/hblog
+        username: 
+        password: 
         type: com.alibaba.druid.pool.DruidDataSource
         dbcp2:
           initial-size: 1
